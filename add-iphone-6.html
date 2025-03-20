@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Device</title>
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBy6bSRkUvGmCwlQt6-vn3Eu8UpRcV2n9E",
+  authDomain: "techturnover-1b9a4.firebaseapp.com",
+  projectId: "techturnover-1b9a4",
+
+  storageBucket: "techturnover-1b9a4.firebasestorage.app",
+  messagingSenderId: "774422758226",
+  appId: "1:774422758226:web:9e190b7a2e60cb65feb08b"
+};
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Function to validate variant format (RAM/ROM)
+        function isValidVariant(variant) {
+            const variantPattern = /^\d+GB\/\d+GB$/; // Example: 4GB/128GB
+            return variantPattern.test(variant);
+        }
+
+        // Function to add a device (only accessible to the developer)
+        function addDeviceManually(deviceName, brand, variant) {
+            if (!deviceName || !brand || !variant) {
+                console.error("All fields are required.");
+                return;
+            }
+            
+            if (!isValidVariant(variant)) {
+                console.error("Invalid variant format. Use RAM/ROM format (e.g., 4GB/128GB).");
+                return;
+            }
+            
+            const deviceRef = push(ref(database, "devices"));
+            set(deviceRef, {
+                name: deviceName,
+                brand: brand,
+                variant: variant
+            }).then(() => {
+                console.log("Device added successfully!");
+            }).catch(error => {
+                console.error("Error adding device:", error);
+            });
+        }
+
+        // Example usage (developer manually adds devices)
+        addDeviceManually("iPhone 13", "Apple", "4GB/128GB");
+        addDeviceManually("Galaxy S21", "Samsung", "8GB/256GB");
+    </script>
+</head>
+<body>
+    <h2>Device Management (Developer Only)</h2>
+    <p>Devices should be added manually via code or directly in the database.</p>
+    <p>Variant format must be in RAM/ROM (e.g., 4GB/128GB).</p>
+</body>
+</html>

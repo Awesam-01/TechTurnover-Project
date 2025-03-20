@@ -1,0 +1,138 @@
+
+.nokia-navigationbar{
+    padding: 1rem 1.5rem 0 1.5rem ;
+}
+.nokia-name{
+    text-align: center;
+    align-items: center;
+    margin: 1px 0 1px 0;
+}
+.nokia-container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 1.5rem;
+}
+.nokia-card{
+    object-fit: contain;
+    display: grid;
+    justify-content:center ;
+    align-items: center;
+    grid-template-rows: auto auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    height: 300px;
+}
+.nokia-img{
+    background-repeat: no-repeat;
+    object-fit: cover;
+    justify-content: center;
+    background-position: center;
+    margin-top: 5px;
+}
+.nokia-card img {
+    width: 100%;
+    height: 70%; /* Ensure a consistent image area */
+    object-fit: contain; /* Crops or scales the image to fit within the area */
+  }
+.nokia{
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    object-fit: cover; /* Ensures the image is resized proportionally */
+
+}
+.sell-on-techturnover{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+.sell{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    padding-right: 100px;
+}
+.sell-reason{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sell-img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+}
+.w-24{
+    width: 6rem;
+}
+img, video{
+    max-width: 100%;
+    height: auto;
+}
+.sell-explanation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sell-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.sell-statement{
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.why-sell{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    padding-left: 50px;
+}
+.sell-subtitle{
+    text-align: start;
+    font-weight: 600;
+
+}
+.sell-reason-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sell-statement-1{
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+}
+/* footer */
+.footer{
+    background-color: gray;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: black;
+    padding: 50px 60px 50px;
+}
+.contact-us-logos{
+    display: flex;
+    gap: 20px;
+}
+.payment-img{
+    text-align: right;
+    display: block;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background: #1f242d;
+}
+
+.contact h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact form {
+    width: 600px;
+    text-align: center;
+}
+
+form .input-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field .error-text{
+    font-size: 15px;
+    color: red;
+    text-align: left;
+    margin: -5px 0 20px;
+    display: none; /*This is to make sure the error-text does not display on the UI unless a condition is not met*/
+}
+
+form .textarea-field .error-text {
+    margin-top: -10px;
+}
+
+.input-box .input-field {
+    width: 50%;
+}
+.field .item {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid #0ef;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#ededed;
+    margin: 12px 0;
+}
+
+.field .item::placeholder {
+    color:rgba(255, 255, 255, 3);
+}
+ 
+/*Now let's set the message box cant be resized*/
+form .textarea-field .item {
+    resize: none;
+}
+
+/*Button*/
+form button {
+    padding: 12px 32px;
+    background: #0ef;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .5s;
+}
+
+form button:hover {
+    box-shadow: none;
+}

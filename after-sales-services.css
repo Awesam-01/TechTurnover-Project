@@ -1,0 +1,16 @@
+.warranty-section{
+    margin-bottom: 45px;
+}
+.warranty-include{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.warranty-reason{
+    display: flex;
+    flex-direction: column;
+}
+.warranty-container .warranty-include{
+    margin-right: -15px;
+    margin-left: -15px;
+}

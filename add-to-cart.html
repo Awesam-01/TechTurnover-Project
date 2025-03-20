@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link rel="stylesheet" href="add-to-cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="showCart">
+    <div class="container">
+        <header>
+            <div class="title">PRODUCT LIST</div>
+            <!--This contains the shopping icon cart-->
+            <div class="icon-cart"> 
+                <i class="fa-solid fa-cart-shopping"></i>
+                <!--This will display the total number of products in the cart-->
+                <span>0</span> 
+            </div>
+        </header>
+        <!--This contains the entire list of products-->
+        <div class="listProducts">
+            <div class="item">
+                <img src="images/Apple iPhone 16 pro max.jpeg">
+                <h2>NAME PRODUCT</h2>
+                <div class="price">100,000</div>
+                <!--This is button to add the items to the cart-->
+                <div class="addCart"> 
+                    Add To Cart
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Shopping Cart content window-->
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <!--contains all the items in the shopping cart-->
+    <div class="listCart"> 
+        <div class="item">
+            <div class="image">
+                <img src="images/Apple iPhone 16 pro max.jpeg">
+            </div>
+            <div class="name">
+                Apple Iphone 16 Pro Max
+            </div>
+            <div class="totalPrice">
+                100,000
+            </div>
+             <!--we will have two buttons to help change the quantity-->
+            <div class="quantity">
+                <span class="minus"></span>
+                <span>1</span>
+                <span class="plus"></span>
+            </div>
+        </div>
+    </div>
+    <!--Shopping cart button with two buttons-->
+    <div class="cartButton"> 
+        <!--close the shopping cart window-->
+        <button class="close">Close</button> 
+        <!--navigate to the payment page-->
+        <button class="checkout">Check Out</button>
+    </div>
+    </div>
+</body>
+</html>
