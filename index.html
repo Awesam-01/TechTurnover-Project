@@ -6,11 +6,16 @@
     <title>TechTurnover Kenya</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="top-bar-container">
             <div class="top-bar">
-                <img src="images/TechTurnover Logo.jpg" style="height:50px">
+                <a href="index.html">
+                    <img src="images/TechTurnover Logo.jpg" style="height:50px">
+                </a>
             </div>
             <div class="search-bar">
                 <input id="search" type="search" class placeholder="Search our store">
@@ -25,9 +30,7 @@
                     <a href="">
                         <i class="fa-solid fa-user"></i>
                     </a>
-                </div>
-         
-      
+                </div> 
     </div>
     <div class="primary-header">
         <div class="container">
@@ -40,7 +43,7 @@
                 <nav class="primary-navigation">
                     <ul role="list" class="nav-list">
                         <li><a href="#">Best Offers</a></li>
-                        <li><a href="#">Register Warranty</a></li>
+                        <li><a href="./warranty.html">Register Warranty</a></li>
                         <li><a href="./select-model.html">Sell your Phone</a></li>
                         <li><a href="./after-sales-services.html">After Sale Services</a></li>
                         <li><a href="#">About Us</a></li>
@@ -53,26 +56,18 @@
     <!-- Grid Items -->
     <div class="bestsellers-container">
         <div class="best-sellers"><h4>Bestsellers</h4></div>
-            <div class="scrollable-container">
+            <div class="scrollable-container" id="scrollable-container">
                 <div class="image-card">
                     <img src="images/Samsung A21.jpeg" alt="Samsung A21">
-                    <p>Samsung Galaxy A21</p>
+                    <p class="device-name">Samsung Galaxy A21</p>
                     <div class="product-price">
                         <span class="price" style="color: #696969;">KSh8,000.00</span>
                         <span class="prev-price" style="color: #58cab9;">KSh16,700.00</span>
                     </div>
-                    <div class="product-action">
-                        <button type="submit" aria-label="Add To Cart" class="popup-icons">
-                            <span class="cart-title">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </span>
-                        </button>
-                        <span class="add-wishlist" style="cursor: pointer;"><i class="fa-solid fa-heart"></i></span>
-                    </div>
                 </div>
                 <div class="image-card">
                     <img src="images/Samsung A20.jpeg" alt="Redmi Note 12">
-                    <p>Samsung Galaxy A20</p>
+                    <p class="device-name">Samsung Galaxy A20</p>
                     <div class="product-price">
                         <span class="price" style="color: #696969;">KSh8,999.00</span>
                         <span class="prev-price" style="color: #58cab9;">KSh16,500.00</span>
@@ -80,7 +75,7 @@
                 </div>
                 <div class="image-card">
                     <img src="images/Samsung A52.jpeg" alt="Huawei P50">
-                    <p>Samsung Galaxy A52 5G</p>
+                    <p class="device-name">Samsung Galaxy A52 5G</p>
                     <div class="product-price">
                         <span class="price" style="color: #696969;">KSh20,399.00</span>
                         <span class="prev-price" style="color: #58cab9;">KSh66,300.00</span>
@@ -88,7 +83,7 @@
                 </div>
                 <div class="image-card">
                     <img src="images/Samsung S21 ultra.jpeg" alt="Huawei P50">
-                    <p>Samsung Galaxy S21 Ultra 5G</p>
+                    <p class="device-name">Samsung Galaxy S21 Ultra 5G</p>
                     <div class="product-price">
                         <span class="price" style="color: #696969;">KSh52,500.00</span>
                         <span class="prev-price" style="color: #58cab9;">KSh142,428.00</span>
@@ -96,7 +91,7 @@
                 </div>
                 <div class="image-card">
                     <img src="images/Google Pixel 7.jpeg" alt="Huawei P50">
-                    <p>Google Pixel 7</p>
+                    <p class="device-name">Google Pixel 7</p>
                     <div class="product-price">
                         <span class="price" style="color: #696969;">KSh55,000.00</span>
                         <span class="prev-price" style="color: #58cab9;">KSh72,000.00</span>
@@ -105,45 +100,46 @@
             </div>
     </div><br>
     <hr>
-    <h2 class="small-heading">Clearance Sale</h2>
     <div class="clearance-container">
+        <div class="clearance-sale"><h4>Clearance Sale</h4></div>
         <div class="scrollable-container">
             <div class="image-card">
                 <img src="images/Samsung A20.jpeg" alt="Huawei P50">
-                <p>Samsung Galaxy A20</p>
+                <p class="device-name">Samsung Galaxy A20</p>
             </div>
             <div class="image-card">
                 <img src="images/Oppo F11 Pro.jpeg" alt="Redmi Note 12">
-                <p>Oppo F11 Pro</p>
+                <p class="device-name">Oppo F11 Pro</p>
             </div>
             <div class="image-card">
                 <img src="images/Iphone 6.jpeg" alt="Huawei P50">
-                <p>Iphone 6</p>
+                <p class="device-name">Iphone 6</p>
             </div>
             <div class="image-card">
                 <img src="images/Oppo R15.jpeg" alt="Huawei P50">
-                <p>Oppo R15</p>
+                <p class="device-name">Oppo R15</p>
             </div>
             <div class="image-card">
                 <img src="images/Iphone 7.jpeg" alt="Huawei P50">
-                <p>Iphone 7</p>
+                <p class="device-name">Iphone 7</p>
             </div>
         </div>
-    </div>
+    </div><br>
+    <hr>
     <h2 class="small-heading">Refurbished Phones</h2>
     <div class="refurbished-container">
         <div class="scrollable-container">
             <div class="image-card">
                 <img src="images/Samsung A20.jpeg" alt="Samsung A20">
-                <p>Samsung A20</p>
+                <p class="device-name">Samsung A20</p>
             </div>
             <div class="image-card">
                 <img src="images/Samsung Galaxy A52 5G.jpeg" alt="Samsung Galaxy A52 5G">
-                <p>Samsung Galaxy A52 5G</p>
+                <p class="device-name">Samsung Galaxy A52 5G</p>
             </div>
             <div class="image-card">
                 <img src="images/Samsung-A21.jpg" alt="Samsung Galaxy A21">
-                <p>Samsung Galaxy A21</p>
+                <p class="device-name">Samsung Galaxy A21</p>
                 <div class="product-price">
                     <span class="price" style="color: #696969;">KSh8,000.00</span>
                     <span class="prev-price" style="color: #58cab9;">KSh16,700.00</span>
@@ -159,7 +155,7 @@
             </div>
             <div class="image-card">
                 <img src="images/Samsung A10s.jpeg" alt="Samsung Galaxy A10s">
-                <p>Samsung Galaxy A10s</p>
+                <p class="device-name">Samsung Galaxy A10s</p>
             </div>
         </div>
     </div>
@@ -494,6 +490,6 @@
 
 -->
     <!-- <button class="nav-arrow right" onclick="scrollRight()">&#10095;</button> -->
-<script  src="main.js"></script>
+<script  src="index.js"></script>
 </body>
 </html>

@@ -29,6 +29,7 @@
 }
 
  */
+
  .top-bar-container {
     position: relative;
     width: 100%;
@@ -72,6 +73,24 @@
 }
 
 /* navigation */
+.primary-navigation{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #666;
+    line-height: 24px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+a, button {
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+a:hover{
+    color: #007bff;
+}
 .nav-wrapper{
     display: flex;
     justify-content: space-between;
@@ -104,6 +123,8 @@
     gap: 30px;
     justify-content: center;
     width: 100%;
+    font-family:'Roboto', sans-serif ;
+    font-size: 15px;
 }
 .image-card{
     display: grid;
@@ -144,16 +165,26 @@
     height: 20px;
     width: 90%;
     display: flex;
+    font-size: 20px;
     align-items: center;
     justify-content: center;
 }
-.clearance-sub-title{
-    position: absolute;
+.clearance-container{
+    border: 2px solid black; /* Border around the container */
+    position: relative;
+    border-radius: 10px;
+    padding: 20px; /* Padding inside the container */
+    background-color: #fff; /* Background color of the container */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Shadow around the container */
+}
+.clearance-sale{
+    position: relative;
     top: -10px;
     background-color: white;
     height: 20px;
     width: 90%;
     display: flex;
+    font-size: 20px;
     align-items: center;
     justify-content: center;
 }

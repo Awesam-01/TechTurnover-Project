@@ -171,6 +171,13 @@ const database = getFirestore(app); // Pass `app` to avoid re-initialization
                     name.classList.add("phone-name");
                     name.textContent = data.name;
 
+                    link.addEventListener('click', () => {
+                // Save object to localStorage
+                localStorage.setItem('selectedPhone', JSON.stringify(data));
+                // Navigate to the new page
+                window.location.href = `./details.html` 
+            })
+
                     // Append elements
                     link.appendChild(imgDiv);
                     card.appendChild(link);

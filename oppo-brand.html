@@ -142,7 +142,7 @@
             container.innerHTML = "";
 
             try{
-                const oppoCollection = collection(database, "Oppo"); //we are fetching data from collection called xiaomi from my firebase database
+                const oppoCollection = collection(database, "Xiaomi"); //we are fetching data from collection called xiaomi from my firebase database
                 // snapshot is like a screenshot of all the documents held from the Oppo collection at the moment
                 const snapshot = await getDocs(oppoCollection); // we retrieve all documents from the Oppo collection in Firestore.
                 snapshot.forEach(doc => { // helps you to loop through the documents inside the snapshot

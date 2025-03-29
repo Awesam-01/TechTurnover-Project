@@ -1,3 +1,158 @@
+.top-bar-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+ 
+  }
+.business-logo{
+    grid-column: 1 / span 2; /* Starts at column 1, spans 2 columns */
+    background-repeat: no-repeat;
+    background-position: center 50px;
+}
+  .search-bar{
+    width:100%;
+    position:relative;
+  }
+.search-bar .fa{
+    position:absolute;
+    right:15px;
+    top:10px;
+}
+  .top-bar-container input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add padding for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex:1;
+}
+ 
+.top-bar-icons{
+    gap: 20px;
+    display: flex;
+}
+.menu{
+    background-color: black;
+    display: block;
+    color: white;
+}
+
+/* navigation */
+.primary-header{
+    margin-top: 20px;
+}
+.primary-navigation{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #666;
+    line-height: 24px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+a, button {
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+a:hover{
+    color: #007bff;
+}
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    font-size: 20px;
+    color: black;
+}
+.nav-list{
+    display: flex;
+    gap: 100px;
+    font-weight: 30px;
+    list-style: none;
+}
+.nav-list a{
+    text-decoration: none;
+}
+
+
+/*title*/
+.custom-container{
+    text-align: center;
+}
+.section-title{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.section-title h2 {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.section-title-2{
+    margin-bottom: 45px;
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+.section-title-2 h2 {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.42em;
+    color: #323232;
+}
+
+.after-sales-content{
+    color: #666;
+}
+.after-sales-content h2 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 0;
+    font-family: "CerebriSans";
+    margin: 0;
+    line-height: 1.2;
+}
+/*warranty*/
+.warranty1 .seven-month-wrapper .seven-month-content .title{
+    margin: 25px 0 23px;
+}
+.warranty1 .seven-month-wrapper .seven-month-content .title h3{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    color: #323232;
+}
+.row{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 70px;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.74;
+    color: #444;
+    margin-bottom: 15px;
+    font-family: "CerebriSans";
+}
+
 .warranty-section{
     margin-bottom: 45px;
 }
@@ -13,4 +168,48 @@
 .warranty-container .warranty-include{
     margin-right: -15px;
     margin-left: -15px;
+}
+.section-title-3{
+    margin-left: 20px;
+}
+.content-3{
+    margin-bottom: 70px;
+    padding-left: 20px;
+}
+.section-title-4{
+    margin-bottom: 70px;
+    padding-left: 20px;
+}
+.section-title42 h2 {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.42em;
+    padding-left: 20px;
+}
+.section-title-5{
+    padding-left: 20px;
+}
+.time-warrant{
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 70px;
+}
+
+/* footer */
+.footer{
+    background-color: rgb(61, 141, 129);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: black;
+    padding: 50px 60px 50px;
+}
+.contact-us-logos{
+    display: flex;
+    gap: 20px;
+}
+.payment-img{
+    text-align: right;
+    display: block;
+    background-repeat: no-repeat;
 }
