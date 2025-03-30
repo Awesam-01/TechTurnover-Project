@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+</head>
+<body>
+    <p>Your sell request has been completed successfully. We have emailed your request details to <span id="user-email"></span>.</p>
+    <a href="index.html">Go to dashboard</a>
+</body>
+<script>
+    // Retrieve user object from localStorage
+    const user = localStorage.getItem("user");
+
+    if (user) {
+        try {
+            // Parse JSON and extract the email
+            const parsedUser = JSON.parse(user);
+            const userEmail = parsedUser.email || "your registered email";
+
+            // Display email
+            document.getElementById("user-email").textContent = userEmail;
+        } catch (error) {
+            console.error("Error parsing user data:", error);
+            document.getElementById("user-email").textContent = "your registered email";
+        }
+    } else {
+        // No user data found
+        document.getElementById("user-email").textContent = "your registered email";
+        console.warn("No user object found in localStorage.");
+    }
+</script>
+</html>

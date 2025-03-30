@@ -1,11 +1,11 @@
+import { db, addDoc, collection } from "./firebase-config.js"
+
 const data = JSON.parse(localStorage.getItem('selectedPhone'));
 const container = document.querySelector('.radio-tile-group');
 const estimateAmount = document.getElementById('estimate-amount')
 const amountInput = document.createElement('input'); // Create input field
 const submitButton = document.createElement('button'); // Create submit button
 
-
-estimateAmount.style.display = 'none'
 
 if (estimateAmount) {
     estimateAmount.style.display = 'none';
@@ -28,7 +28,7 @@ amountInput.style.marginTop = '10px';
 amountInput.style.padding = '5px';
 amountInput.style.border = '1px solid #007BFF';
 amountInput.style.borderRadius = '5px';
-amountInput.style.display = 'none'; // Hidden initially
+//amountInput.style.display = 'none'; // Hidden initially
 }
 // Style the amount input field
 
@@ -37,7 +37,7 @@ if (amountInput) {
 submitButton.textContent = 'Submit';
 submitButton.style.marginTop = '10px';
 submitButton.style.padding = '8px 12px';
-submitButton.style.backgroundColor = '#28a745';
+submitButton.style.backgroundColor = '#007bff';
 submitButton.style.color = 'white';
 submitButton.style.border = 'none';
 submitButton.style.borderRadius = '5px';
@@ -49,6 +49,7 @@ submitButton.style.display = 'none'; // Hidden initially
 // Append elements to the estimateAmount div
 estimateAmount.appendChild(amountInput);
 estimateAmount.appendChild(submitButton);
+
 
 
 if (data && data.variant) {
@@ -104,16 +105,53 @@ if (data && data.variant) {
 
 
 // Show submit button when user enters a valid amount and hide when input is empty
-amountInput.addEventListener('input', () => {
-    const value = amountInput.value.trim();
-    if (value !== '' && !isNaN(value) && Number(value) > 0) {
-        submitButton.style.display = 'block'; // Show submit button
-    } else {
-        submitButton.style.display = 'none'; // Hide if input is empty or invalid
-    }
-});
+if (amountInput) {
+    amountInput.addEventListener("input", (e) => {
+        const value = e.target.value.trim(); // Properly fetch value
+        console.log("Amount input event fired:", value); // Debugging
+        
+        if (value !== "" && !isNaN(value) && Number(value) > 0) {
+            submitButton.style.display = "block"; // Show submit button
+        } else {
+            submitButton.style.display = "none"; // Hide if input is invalid
+        }
+    });
+}
+
 
 // Handle submit button click
-submitButton.addEventListener('click', () => {
-    alert(`Amount Submitted: $${amountInput.value}`);
+submitButton.addEventListener("click", async (e) => {
+    e.preventDefault()
+     const selectedVariant = document.querySelector(".radio-button:checked");
+
+    if (!selectedVariant) {
+        alert("Please select a variant.");
+        return;
+    }
+    const userAmount = amountInput.value.trim();
+    if (userAmount === "" || isNaN(userAmount) || Number(userAmount) <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+    }
+    const phoneDetails = { ...data }; //copy the whole data before any changes
+    delete phoneDetails.variant; // delete variant
+    delete phoneDetails.image_url //delete image_url
+    const payload = {
+        selectedVariant: selectedVariant.value,
+        phoneDetails,  
+        amount: Number(userAmount),
+        timestamp: new Date()
+    };
+    try {
+        
+        const docRef = await addDoc(collection(db, "sell-requests"), payload);
+        if (docRef.id) {  // Check if a valid document ID was returned
+            window.location.href = "./submission-success.html";  // Redirect on success
+        } else {
+            alert("Submission failed. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error adding document:", error);
+        alert("Error submitting data. Please try again.");
+    }
 });

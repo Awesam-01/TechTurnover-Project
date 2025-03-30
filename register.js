@@ -1,5 +1,7 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js"; //used to set up firebase in my project
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js"; //functions inside firebase that creates a user with email and password
+//import { db, setDoc, collection } from "./firebase-config.js"
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,27 +17,34 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig); 
 const auth = getAuth(app)
+const db = getFirestore();
 
 
 
-
-  const submit = document.getElementById("submit").addEventListener('click', function(e){
+  const submit = document.getElementById("submit").addEventListener('click', async function(e){
     e.preventDefault();
     const email =  document.getElementById("email").value
+    const phoneNumber =  document.getElementById("phone").value
 const password =  document.getElementById("password").value
-    createUserWithEmailAndPassword(auth, email, password)
+    const userCredential = createUserWithEmailAndPassword(auth, email, password)
  
-  .then((userCredential) => {
+  try{
     // Signed up 
    
     const user = userCredential.user;
-window.location.href="login-page.html"    
-  })
-  .catch((error) => {
+        // Store user details in Firestore
+      //   await setDoc(doc(db, "Users", user.uid), {
+      //     email: email,
+      //     phoneNumber: phoneNumber,
+      //     createdAt: new Date()
+      // });
+window.location.href="index.html"    
+  }
+  catch(error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     // ..
-  })
+  }
  
   
   })

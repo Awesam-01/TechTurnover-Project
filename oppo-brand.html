@@ -140,11 +140,26 @@
         async function getData() {
             const container = document.getElementById('oppo-container'); //first thing is we try to get a reference to an HTML element with the ID "oppo-container".
             container.innerHTML = "";
+            const loadingOverlay = document.createElement("div");
+                loadingOverlay.style.position = "fixed";
+                loadingOverlay.style.top = "0";
+                loadingOverlay.style.left = "0";
+                loadingOverlay.style.width = "100%";
+                loadingOverlay.style.height = "100vh";
+                loadingOverlay.style.background = "rgba(255, 255, 255, 0.8)"; // Light background to improve visibility
+                loadingOverlay.style.display = "flex";
+                loadingOverlay.style.justifyContent = "center";
+                loadingOverlay.style.alignItems = "center";
+                loadingOverlay.style.fontSize = "20px";
+                loadingOverlay.style.fontWeight = "bold";
+                loadingOverlay.innerText = "Loading...";
 
+                document.body.appendChild(loadingOverlay)
             try{
-                const oppoCollection = collection(database, "Xiaomi"); //we are fetching data from collection called xiaomi from my firebase database
+                const oppoCollection = collection(database, "Oppo"); //we are fetching data from collection called oppo from my firebase database
                 // snapshot is like a screenshot of all the documents held from the Oppo collection at the moment
                 const snapshot = await getDocs(oppoCollection); // we retrieve all documents from the Oppo collection in Firestore.
+                document.body.removeChild(loadingOverlay)
                 snapshot.forEach(doc => { // helps you to loop through the documents inside the snapshot
                     const data = doc.data();
 

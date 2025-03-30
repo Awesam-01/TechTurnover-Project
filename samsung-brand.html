@@ -149,7 +149,7 @@ const database = getFirestore(app); // Pass `app` to avoid re-initialization
                 const snapshot = await getDocs(samsungCollection);
                 snapshot.forEach(doc => {
                     const data = doc.data();
-
+                    console.log(data)
                     // Create card element
                     const card = document.createElement("div");
                     card.classList.add("samsung-card");
